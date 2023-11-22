@@ -1,5 +1,6 @@
 package com.tenants.knowledgesharing.micrometermetrics.infrastructure;
 
+import io.micrometer.core.instrument.DistributionSummary;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Timer;
 import org.springframework.stereotype.Component;
@@ -24,6 +25,11 @@ public class MetricsLogger {
 	
 	public Timer recordTime(String metricName) {
 		return meterRegistry.timer(metricName);
+	}
+	
+	// Distribution Summary
+	public void register(String metricName) {
+		meterRegistry.summary(metricName);
 	}
 	
 }

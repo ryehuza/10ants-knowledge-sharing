@@ -20,4 +20,10 @@ public class KSMetrics {
 	public static final String TENANT_DELETED_TIMER
 			= "tenant.deleted.timed.timer";
 	
+	// Distribution Summary
+	public static final String CREATE_TENANT_API_REQUEST_GET_DISTRIBUTION
+			= "tenant.api.create.request.size.get.summary";
+	public static final String CREATE_TENANT_API_REQUEST_POST_D_SUMMARY
+			= "tenant.api.create.request.size.post.summary";
+	
 }

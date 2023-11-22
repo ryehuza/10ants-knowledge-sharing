@@ -55,7 +55,7 @@ public class TenantLifecycleService {
 		log.info("........... tenant deactivated: " + tenantId);
 	}
 	
-	@Timed(KSMetrics.TENANT_DELETED_TIMER)
+	@Timed(value = KSMetrics.TENANT_DELETED_TIMER)
 	//percentiles = { 0.5, 0.75, 0.95, 0,98, 0.99 }
 	public void delete(String tenantId) {
 		try {
