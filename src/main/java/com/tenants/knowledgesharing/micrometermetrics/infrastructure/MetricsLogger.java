@@ -1,4 +1,4 @@
-package com.tenants.knowledgesharing.infrastructure;
+package com.tenants.knowledgesharing.micrometermetrics.infrastructure;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Timer;

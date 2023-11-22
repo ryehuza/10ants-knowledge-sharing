@@ -1,16 +1,15 @@
-package com.tenants.knowledgesharing.service;
+package com.tenants.knowledgesharing.micrometermetrics.service;
 
 import java.util.concurrent.TimeUnit;
 
-import com.tenants.knowledgesharing.infrastructure.KSMetrics;
-import com.tenants.knowledgesharing.infrastructure.MetricsLogger;
+import com.tenants.knowledgesharing.micrometermetrics.infrastructure.KSMetrics;
+import com.tenants.knowledgesharing.micrometermetrics.infrastructure.MetricsLogger;
+import com.tenants.knowledgesharing.micrometermetrics.utils.RandomUtils;
 import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Timer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import static com.tenants.knowledgesharing.utils.RandomUtils.getRandomNumberInRange;
 
 @Service
 @Slf4j
@@ -36,7 +35,7 @@ public class TenantLifecycleService {
 	public void activate(String tenantId) {
 		// delay processing times randomly, so we can use a timer to track latency
 		try {
-			Thread.sleep(getRandomNumberInRange(1, 90) * 1000L);
+			Thread.sleep(RandomUtils.getRandomNumberInRange(1, 90) * 1000L);
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
@@ -49,7 +48,7 @@ public class TenantLifecycleService {
 		// Storing Start State in Timer.Sample
 		
 		Timer.Sample sample = Timer.start(meterRegistry);
-		int randomNumber = getRandomNumberInRange(1, 90);
+		int randomNumber = RandomUtils.getRandomNumberInRange(1, 90);
 		TimeUnit.SECONDS.sleep(randomNumber);
 		sample.stop(meterRegistry.timer(KSMetrics.TENANT_DEACTIVATED_TIMER, "randomSleepNumber", String.valueOf(randomNumber)));
 		
@@ -60,7 +59,7 @@ public class TenantLifecycleService {
 	//percentiles = { 0.5, 0.75, 0.95, 0,98, 0.99 }
 	public void delete(String tenantId) {
 		try {
-			Thread.sleep(getRandomNumberInRange(1, 90) * 1000L);
+			Thread.sleep(RandomUtils.getRandomNumberInRange(1, 90) * 1000L);
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}

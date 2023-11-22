@@ -1,15 +1,15 @@
-package com.tenants.knowledgesharing.service;
+package com.tenants.knowledgesharing.micrometermetrics.service;
 
 import java.util.UUID;
 
-import com.tenants.knowledgesharing.infrastructure.MetricsLogger;
-import com.tenants.knowledgesharing.infrastructure.KSMetrics;
+import com.tenants.knowledgesharing.micrometermetrics.infrastructure.MetricsLogger;
+import com.tenants.knowledgesharing.micrometermetrics.infrastructure.KSMetrics;
 import io.micrometer.core.instrument.MeterRegistry;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import static com.tenants.knowledgesharing.utils.RandomUtils.getRandomNumberInRange;
+import static com.tenants.knowledgesharing.micrometermetrics.utils.RandomUtils.getRandomNumberInRange;
 
 @Component
 @Slf4j

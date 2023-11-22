@@ -1,4 +1,4 @@
-package com.tenants.knowledgesharing.utils;
+package com.tenants.knowledgesharing.micrometermetrics.utils;
 
 import java.util.Random;
 

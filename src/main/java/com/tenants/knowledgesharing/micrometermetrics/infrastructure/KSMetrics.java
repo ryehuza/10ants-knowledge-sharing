@@ -1,4 +1,4 @@
-package com.tenants.knowledgesharing.infrastructure;
+package com.tenants.knowledgesharing.micrometermetrics.infrastructure;
 
 public class KSMetrics {
 	

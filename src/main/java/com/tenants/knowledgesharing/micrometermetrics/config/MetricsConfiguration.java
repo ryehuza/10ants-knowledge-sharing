@@ -1,4 +1,4 @@
-package com.tenants.knowledgesharing.config;
+package com.tenants.knowledgesharing.micrometermetrics.config;
 
 import io.micrometer.core.aop.TimedAspect;
 import io.micrometer.core.instrument.MeterRegistry;
